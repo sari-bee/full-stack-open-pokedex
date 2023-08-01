@@ -9,6 +9,9 @@ on:
     branches: [master]
     types: [opened, synchronize]
 
+  schedule:
+    - cron:  '30 5,17 * * *'
+
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
