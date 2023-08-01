@@ -30,7 +30,8 @@ jobs:
         if: ${{  failure() && steps.build.conclusion == 'failure' }}
         with:
           severity: error
-          details: Build failed
+          description: Build failed
+          details: commit {{ join(github.event.commits.*.url, ' ') }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Run tests
         run: npm test
@@ -51,7 +52,8 @@ jobs:
         if: ${{  success() && steps.deploy.conclusion == 'success' }}
         with:
           severity: info
-          details: Deploy succeeded
+          description: Deploy succeeded
+          details: commit {{ join(github.event.commits.*.url, ' ') }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.55.0
