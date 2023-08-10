@@ -17,3 +17,9 @@ Start by running `npm install` inside the project folder
 ## Fly.io app
 
 https://fragrant-shape-1953.fly.dev/
+
+## Repository for CI/CD of my own app
+
+https://github.com/sari-bee/fullstackopen_part3
+
+
